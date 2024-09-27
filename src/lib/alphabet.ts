@@ -1,4 +1,14 @@
-const alphabet = [
+export type Alphabet = AlphabetGroup[];
+
+export type AlphabetGroup = {
+	selected: boolean;
+	letters: {
+		letter: string;
+		romanization: string[];
+	}[];
+};
+
+export const alphabet: Alphabet = [
 	{
 		selected: true,
 		letters: [
@@ -15,7 +25,7 @@ const alphabet = [
 		]
 	},
 	{
-		selected: false,
+		selected: true,
 		letters: [
 			{ letter: 'ㅑ', romanization: ['ya'] },
 			{ letter: 'ㅕ', romanization: ['yeo'] },
@@ -60,5 +70,3 @@ const alphabet = [
 		]
 	}
 ];
-
-export default alphabet;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import alphabet from '$lib/alphabet';
+	import { alphabet } from '$lib/alphabet';
 </script>
 
 <table>
