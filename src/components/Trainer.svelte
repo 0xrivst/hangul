@@ -9,13 +9,15 @@
 	let correct = 0;
 	let total = 0;
 
-	function checkAnswer(correctAnswer: string, currentAnswer: string) {
+	function checkAnswer(correctAnswer: string[], currentAnswer: string) {
 		if (!currentAnswer) return undefined;
 
-		if (currentAnswer === correctAnswer) return true;
+		if (correctAnswer.includes(currentAnswer)) return true;
 
 		for (let i = 0; i < currentAnswer.length; i++) {
-			if (correctAnswer[i] !== currentAnswer[i]) return false;
+			for (let j = 0; j < correctAnswer.length; j++) {
+				if (correctAnswer[j][i] !== currentAnswer[i]) return false;
+			}
 		}
 	}
 
@@ -27,7 +29,7 @@
 	}
 
 	$: {
-		const answer = checkAnswer(currentLetter.romanization[0], currentAnswer);
+		const answer = checkAnswer(currentLetter.romanization, currentAnswer);
 		if (answer !== undefined) {
 			if (answer === true) {
 				correct++;

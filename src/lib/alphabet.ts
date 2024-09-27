@@ -25,7 +25,7 @@ export const alphabet: Alphabet = [
 		]
 	},
 	{
-		selected: true,
+		selected: false,
 		letters: [
 			{ letter: 'ㅑ', romanization: ['ya'] },
 			{ letter: 'ㅕ', romanization: ['yeo'] },
