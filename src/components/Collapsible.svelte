@@ -18,5 +18,6 @@
 		padding: 0.35em;
 		margin: 2em auto;
 		display: block;
+		cursor: pointer;
 	}
 </style>
