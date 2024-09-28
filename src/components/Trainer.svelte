@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { alphabet, type Alphabet } from '$lib/alphabet';
+	import enabledGroups from '$lib/stores/enabledGroups';
 
-	const selectedGroups = alphabet.filter((group) => group.selected);
+	let selectedGroups = filterGroups(alphabet, $enabledGroups);
 
 	let currentLetter = pickRandomLetter(selectedGroups);
 	let currentAnswer = '';
@@ -27,6 +28,12 @@
 
 		return letter;
 	}
+
+	function filterGroups(alphabet: Alphabet, groupsToEnable: boolean[]) {
+		return alphabet.filter((_, index) => groupsToEnable[index]);
+	}
+
+	$: selectedGroups = filterGroups(alphabet, $enabledGroups);
 
 	$: {
 		const answer = checkAnswer(currentLetter.romanization, currentAnswer);

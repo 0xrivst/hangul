@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { alphabet } from '$lib/alphabet';
+	import enabledGroups from '$lib/stores/enabledGroups';
 </script>
 
 <table>
 	<tbody>
-		{#each alphabet as category}
+		{#each alphabet as category, index}
 			<tr>
 				<td>
-					<input type="checkbox" bind:checked={category.selected} />
+					<input type="checkbox" bind:checked={$enabledGroups[index]} />
 				</td>
 				{#each category.letters as letter}
 					<td><span>{letter.letter}</span><br /><span>{letter.romanization}</span></td>
