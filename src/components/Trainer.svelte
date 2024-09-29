@@ -50,7 +50,10 @@
 </script>
 
 <div class="container">
-	<div class="letter">{currentLetter.letter}</div>
+	<div class="letter-container">
+		<div class="romanization">{currentLetter.romanization}</div>
+		<div class="letter">{currentLetter.letter}</div>
+	</div>
 	<div class="tip"></div>
 	<input type="text" class="answer" bind:value={currentAnswer} />
 	{#if total > 0}
@@ -69,6 +72,18 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 1em;
+	}
+	.letter-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1em;
+	}
+	.letter-container:hover .romanization {
+		visibility: visible;
+	}
+	.romanization {
+		visibility: hidden;
 	}
 	.letter {
 		font-size: 5em;
