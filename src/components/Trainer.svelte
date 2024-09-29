@@ -55,7 +55,7 @@
 		<div class="letter">{currentLetter.letter}</div>
 	</div>
 	<div class="tip"></div>
-	<input type="text" class="answer" bind:value={currentAnswer} />
+	<input type="text" autocapitalize="off" autocorrect="off" spellcheck="false" class="answer" bind:value={currentAnswer} />
 	{#if total > 0}
 		<div class="score">
 			{correct} / {total}
