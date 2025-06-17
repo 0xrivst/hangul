@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { alphabet } from '$lib/alphabet';
-	import enabledGroups from '$lib/stores/enabledGroups';
+	import appState from '$lib/AppState.svelte';
 </script>
 
 <table>
@@ -8,7 +8,19 @@
 		{#each alphabet as category, index}
 			<tr>
 				<td>
-					<input type="checkbox" bind:checked={$enabledGroups[index]} />
+					<!-- TODO: Not sure why there's an error here, investigate later -->
+					<!-- Also it looks a bit clumsy but if it works for now let it be so -->
+					<input
+						type="checkbox"
+						bind:checked={
+							() => appState.enabledGroups[index],
+							(v) => {
+								const a = appState.enabledGroups;
+								a[index] = v;
+								appState.enabledGroups = a;
+							}
+						}
+					/>
 				</td>
 				{#each category.letters as letter}
 					<td><span>{letter.letter}</span><br /><span>{letter.romanization}</span></td>

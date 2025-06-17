@@ -1,5 +1,5 @@
 <script lang="ts">
-	import settingsShown from '$lib/stores/settingsShown';
+	import appState from '$lib/AppState.svelte';
 
 	import AlphabetTable from '$components/AlphabetTable.svelte';
 	import Collapsible from '$components/Collapsible.svelte';
@@ -8,7 +8,7 @@
 
 <div class="wrapper">
 	<Trainer />
-	<Collapsible bind:isOpen={$settingsShown} buttonText="show/hide options">
+	<Collapsible bind:isOpen={appState.settingsShown}>
 		<AlphabetTable />
 	</Collapsible>
 </div>

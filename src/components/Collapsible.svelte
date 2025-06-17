@@ -1,12 +1,9 @@
 <script lang="ts">
-	export let isOpen = false;
-	export let buttonText = 'show/hide content';
+	let { isOpen = $bindable() }: { isOpen: boolean } = $props();
 </script>
 
 <div>
-	<button on:click={() => (isOpen = !isOpen)}>
-		{buttonText}
-	</button>
+	<button on:click={() => (isOpen = !isOpen)}> show/hide content </button>
 
 	<div hidden={!isOpen}>
 		<slot></slot>

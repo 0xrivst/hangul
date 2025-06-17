@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { alphabet, type Alphabet } from '$lib/alphabet';
-	import enabledGroups from '$lib/stores/enabledGroups';
+	import appState from '$lib/AppState.svelte';
 
 	import PlaySoundButton from './PlaySoundButton.svelte';
 
 	let correct = $state(0);
 	let total = $state(0);
 
-	let selectedGroups = $state(filterGroups(alphabet, $enabledGroups));
+	let selectedGroups = $state(filterGroups(alphabet, appState.enabledGroups));
 	let currentLetter = $state(pickRandomLetter(selectedGroups));
 	let currentAnswer = $state('');
 
