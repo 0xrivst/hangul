@@ -6,9 +6,8 @@
 	import Trainer from '$components/Trainer.svelte';
 </script>
 
-<Trainer />
-
 <div class="wrapper">
+	<Trainer />
 	<Collapsible bind:isOpen={$settingsShown} buttonText="show/hide options">
 		<AlphabetTable />
 	</Collapsible>

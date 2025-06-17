@@ -2,13 +2,14 @@
 	import { alphabet, type Alphabet } from '$lib/alphabet';
 	import enabledGroups from '$lib/stores/enabledGroups';
 
-	let selectedGroups = filterGroups(alphabet, $enabledGroups);
+	import PlaySoundButton from './PlaySoundButton.svelte';
 
-	let currentLetter = pickRandomLetter(selectedGroups);
-	let currentAnswer = '';
+	let correct = $state(0);
+	let total = $state(0);
 
-	let correct = 0;
-	let total = 0;
+	let selectedGroups = $state(filterGroups(alphabet, $enabledGroups));
+	let currentLetter = $state(pickRandomLetter(selectedGroups));
+	let currentAnswer = $state('');
 
 	function checkAnswer(correctAnswer: string[], currentAnswer: string) {
 		if (!currentAnswer) return undefined;
@@ -33,9 +34,7 @@
 		return alphabet.filter((_, index) => groupsToEnable[index]);
 	}
 
-	$: selectedGroups = filterGroups(alphabet, $enabledGroups);
-
-	$: {
+	$effect(() => {
 		const answer = checkAnswer(currentLetter.romanization, currentAnswer);
 		if (answer !== undefined) {
 			if (answer === true) {
@@ -46,7 +45,7 @@
 			currentAnswer = '';
 			currentLetter = pickRandomLetter(selectedGroups);
 		}
-	}
+	});
 </script>
 
 <div class="container">
@@ -55,12 +54,20 @@
 		<div class="letter">{currentLetter.letter}</div>
 	</div>
 	<div class="tip"></div>
-	<input type="text" autocapitalize="off" autocorrect="off" spellcheck="false" class="answer" bind:value={currentAnswer} />
+	<input
+		type="text"
+		autocapitalize="off"
+		autocorrect="off"
+		spellcheck="false"
+		class="answer"
+		bind:value={currentAnswer}
+	/>
 	{#if total > 0}
 		<div class="score">
 			{correct} / {total}
 		</div>
 	{/if}
+	<PlaySoundButton letter={currentLetter.letter} />
 </div>
 
 <style>
