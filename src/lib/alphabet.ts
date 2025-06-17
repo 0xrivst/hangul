@@ -2,10 +2,7 @@ export type Alphabet = AlphabetGroup[];
 
 export type AlphabetGroup = {
 	selected: boolean;
-	letters: {
-		letter: string;
-		romanization: string[];
-	}[];
+	letters: { letter: string; romanization: string[] }[];
 };
 
 export const alphabet: Alphabet = [
@@ -14,29 +11,29 @@ export const alphabet: Alphabet = [
 		letters: [
 			{ letter: 'ㅏ', romanization: ['a'] },
 			{ letter: 'ㅓ', romanization: ['eo'] },
+			{ letter: 'ㅑ', romanization: ['ya'] },
+			{ letter: 'ㅕ', romanization: ['yeo'] },
+			{ letter: 'ㅣ', romanization: ['i'] },
+			{ letter: 'ㅡ', romanization: ['eu'] },
 			{ letter: 'ㅗ', romanization: ['o'] },
 			{ letter: 'ㅜ', romanization: ['u'] },
-			{ letter: 'ㅡ', romanization: ['eu'] },
-			{ letter: 'ㅣ', romanization: ['i'] },
-			{ letter: 'ㅐ', romanization: ['ae'] },
-			{ letter: 'ㅔ', romanization: ['e'] },
-			{ letter: 'ㅚ', romanization: ['oe'] },
-			{ letter: 'ㅟ', romanization: ['wi'] }
+			{ letter: 'ㅛ', romanization: ['yo'] },
+			{ letter: 'ㅠ', romanization: ['yu'] }
 		]
 	},
 	{
 		selected: false,
 		letters: [
-			{ letter: 'ㅑ', romanization: ['ya'] },
-			{ letter: 'ㅕ', romanization: ['yeo'] },
-			{ letter: 'ㅛ', romanization: ['yo'] },
-			{ letter: 'ㅠ', romanization: ['yu'] },
+			{ letter: 'ㅐ', romanization: ['ae'] },
 			{ letter: 'ㅒ', romanization: ['yae'] },
+			{ letter: 'ㅔ', romanization: ['e'] },
 			{ letter: 'ㅖ', romanization: ['ye'] },
 			{ letter: 'ㅘ', romanization: ['wa'] },
 			{ letter: 'ㅙ', romanization: ['wae'] },
+			{ letter: 'ㅚ', romanization: ['oe'] },
 			{ letter: 'ㅝ', romanization: ['wo'] },
 			{ letter: 'ㅞ', romanization: ['we'] },
+			{ letter: 'ㅟ', romanization: ['wi'] },
 			{ letter: 'ㅢ', romanization: ['ui'] }
 		]
 	},
@@ -44,29 +41,29 @@ export const alphabet: Alphabet = [
 		selected: false,
 		letters: [
 			{ letter: 'ㄱ', romanization: ['g', 'k'] },
-			{ letter: 'ㄲ', romanization: ['kk'] },
-			{ letter: 'ㅋ', romanization: ['k'] },
+			{ letter: 'ㄴ', romanization: ['n'] },
 			{ letter: 'ㄷ', romanization: ['d', 't'] },
-			{ letter: 'ㄸ', romanization: ['tt'] },
-			{ letter: 'ㅌ', romanization: ['t'] },
+			{ letter: 'ㄹ', romanization: ['r', 'l'] },
+			{ letter: 'ㅁ', romanization: ['m'] },
 			{ letter: 'ㅂ', romanization: ['b', 'p'] },
-			{ letter: 'ㅃ', romanization: ['pp'] },
-			{ letter: 'ㅍ', romanization: ['p'] }
+			{ letter: 'ㅅ', romanization: ['s'] },
+			{ letter: 'ㅇ', romanization: ['ng'] },
+			{ letter: 'ㅈ', romanization: ['j'] },
+			{ letter: 'ㅊ', romanization: ['ch'] },
+			{ letter: 'ㅋ', romanization: ['k'] },
+			{ letter: 'ㅌ', romanization: ['t'] },
+			{ letter: 'ㅍ', romanization: ['p'] },
+			{ letter: 'ㅎ', romanization: ['h'] }
 		]
 	},
 	{
 		selected: false,
 		letters: [
-			{ letter: 'ㅈ', romanization: ['j'] },
-			{ letter: 'ㅉ', romanization: ['jj'] },
-			{ letter: 'ㅊ', romanization: ['ch'] },
-			{ letter: 'ㅅ', romanization: ['s'] },
+			{ letter: 'ㄲ', romanization: ['kk'] },
+			{ letter: 'ㄸ', romanization: ['tt'] },
+			{ letter: 'ㅃ', romanization: ['pp'] },
 			{ letter: 'ㅆ', romanization: ['ss'] },
-			{ letter: 'ㅎ', romanization: ['h'] },
-			{ letter: 'ㄴ', romanization: ['n'] },
-			{ letter: 'ㅁ', romanization: ['m'] },
-			{ letter: 'ㅇ', romanization: ['ng'] },
-			{ letter: 'ㄹ', romanization: ['r', 'l'] }
+			{ letter: 'ㅉ', romanization: ['jj'] }
 		]
 	}
 ];
