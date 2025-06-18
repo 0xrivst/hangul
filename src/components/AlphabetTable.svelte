@@ -8,8 +8,6 @@
 		{#each alphabet as category, index}
 			<tr>
 				<td>
-					<!-- TODO: Not sure why there's an error here, investigate later -->
-					<!-- Also it looks a bit clumsy but if it works for now let it be so -->
 					<input
 						type="checkbox"
 						bind:checked={
