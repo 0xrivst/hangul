@@ -7,8 +7,8 @@
 	let correct = $state(0);
 	let total = $state(0);
 
-	let selectedGroups = $state(filterGroups(alphabet, appState.enabledGroups));
-	let currentLetter = $state(pickRandomLetter(selectedGroups));
+	let selectedGroups = $derived(filterGroups(alphabet, appState.enabledGroups));
+	let currentLetter = $derived(pickRandomLetter(selectedGroups));
 	let currentAnswer = $state('');
 
 	function checkAnswer(correctAnswer: string[], currentAnswer: string) {
