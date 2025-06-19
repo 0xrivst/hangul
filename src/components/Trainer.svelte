@@ -59,7 +59,8 @@
 		autocapitalize="off"
 		autocorrect="off"
 		spellcheck="false"
-		class="answer"
+		class="answer form-control"
+		name="letter"
 		bind:value={currentAnswer}
 	/>
 	{#if total > 0}
@@ -71,34 +72,7 @@
 </div>
 
 <style>
-	.container {
-		max-width: 800px;
-		width: 90%;
-		margin: 2em auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1em;
-	}
-	.letter-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1em;
-	}
-	.letter-container:hover .romanization {
-		visibility: visible;
-	}
-	.romanization {
-		visibility: hidden;
-	}
-	.letter {
-		font-size: 5em;
-	}
 	.answer {
 		width: 40%;
-		padding: 6px;
-		text-align: center;
-		font-size: 1em;
 	}
 </style>

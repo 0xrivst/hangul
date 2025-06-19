@@ -3,7 +3,7 @@
 </script>
 
 <div>
-	<button on:click={() => (isOpen = !isOpen)}> show/hide content </button>
+	<button class="button invisible" onclick={() => (isOpen = !isOpen)}> show/hide content </button>
 
 	<div hidden={!isOpen}>
 		<slot></slot>
@@ -12,9 +12,7 @@
 
 <style>
 	button {
-		padding: 0.35em;
-		margin: 2em auto;
+		margin: 1rem auto;
 		display: block;
-		cursor: pointer;
 	}
 </style>

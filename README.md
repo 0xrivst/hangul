@@ -11,6 +11,7 @@ Pick any combination of the 4 groups (simple vowels, diphthongs, simple consonan
 - [ ] Portable version
 - [ ] Stroke order
 - [ ] Add Playwright test
+- [ ] PWA
 
 ## Acknowledgements
 

@@ -27,20 +27,3 @@
 		{/each}
 	</tbody>
 </table>
-
-<style>
-	table {
-		border-collapse: collapse;
-		border: 1px solid #ddd;
-		table-layout: fixed;
-		width: 90%;
-		max-width: 800px;
-		margin: auto;
-	}
-
-	td {
-		border: 1px solid #ddd;
-		padding: 6px;
-		text-align: center;
-	}
-</style>

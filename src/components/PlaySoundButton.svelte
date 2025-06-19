@@ -8,4 +8,4 @@
 	}
 </script>
 
-<button onclick={play}>Play sound</button>
+<button class="button default" onclick={play}>Play sound</button>
