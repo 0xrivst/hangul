@@ -17,6 +17,11 @@ function createState(stateToSet: AppState) {
 			return target[prop as keyof AppState];
 		},
 		set(target, prop, newValue) {
+			// Guardrail to prevent no groups from being selected
+			if (prop === 'enabledGroups') {
+				if (!newValue.reduce((a: boolean, b: boolean) => a || b))
+					newValue = defaultState.enabledGroups;
+			}
 			target[prop as keyof AppState] = newValue;
 			localStorage.setItem('hangul_trainer_state', JSON.stringify(target));
 			return true;
