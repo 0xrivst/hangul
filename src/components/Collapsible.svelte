@@ -3,7 +3,7 @@
 </script>
 
 <div>
-	<button class="button invisible" onclick={() => (isOpen = !isOpen)}> show/hide content </button>
+	<button class="button invisible" onclick={() => (isOpen = !isOpen)}>show/hide content</button>
 
 	<div hidden={!isOpen}>
 		<slot></slot>
