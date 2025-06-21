@@ -10,6 +10,7 @@
 				<td>
 					<input
 						type="checkbox"
+						name={category.name}
 						bind:checked={
 							() => appState.enabledGroups[index],
 							(v) => {

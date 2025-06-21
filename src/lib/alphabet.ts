@@ -1,12 +1,14 @@
 export type Alphabet = AlphabetGroup[];
 
 export type AlphabetGroup = {
+	name: string;
 	selected: boolean;
 	letters: { letter: string; romanization: string[] }[];
 };
 
 export const alphabet: Alphabet = [
 	{
+		name: 'simpleVowels',
 		selected: true,
 		letters: [
 			{ letter: 'ㅏ', romanization: ['a'] },
@@ -22,6 +24,7 @@ export const alphabet: Alphabet = [
 		]
 	},
 	{
+		name: 'diphthongs',
 		selected: false,
 		letters: [
 			{ letter: 'ㅐ', romanization: ['ae'] },
@@ -38,6 +41,7 @@ export const alphabet: Alphabet = [
 		]
 	},
 	{
+		name: 'simpleConsonants',
 		selected: false,
 		letters: [
 			{ letter: 'ㄱ', romanization: ['g', 'k'] },
@@ -57,6 +61,7 @@ export const alphabet: Alphabet = [
 		]
 	},
 	{
+		name: 'doubledConsonants',
 		selected: false,
 		letters: [
 			{ letter: 'ㄲ', romanization: ['kk'] },
