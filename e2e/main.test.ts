@@ -1,4 +1,4 @@
-import { alphabet } from '$lib/alphabet';
+import { alphabet } from '../src/lib/alphabet';
 import type { Page } from '@playwright/test';
 import { expect, test } from '@playwright/test';
 

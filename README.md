@@ -4,6 +4,19 @@ There's a lot of tools for learning hangul but I needed something very simple wh
 
 Pick any combination of the 4 groups (simple vowels, diphthongs, simple consonants, doubled consonants) and just grind to your heart's content! You get a score of correct / total answers, which you can aim to improve (gamification!), and if you're unsure about how to pronounce a letter, just click "Play sound".
 
+## Developing
+
+```bash
+pnpm i
+pnpm dev
+```
+
+## Building
+
+```bash
+pnpm run build
+```
+
 ## To-Do
 
 - [ ] Add more fonts
