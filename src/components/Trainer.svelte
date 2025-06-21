@@ -88,7 +88,7 @@
 	{/if}
 	{#if total == 0 && !answeredIncorrectly}
 		<p class="tip">
-			Hover over the Hangul character to see its romanization and type the correct answer.
+			Hover over the hangul character to see its romanization and type the correct answer.
 		</p>
 	{/if}
 	<PlaySoundButton letter={currentLetter.letter} />
