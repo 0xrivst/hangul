@@ -18,8 +18,17 @@ test.describe('Hangul', () => {
 		return page.locator('.letter');
 	};
 
+	const getRomanization = async () => {
+		await getLetterLocator().hover();
+		return await page.locator('.romanization').innerText();
+	};
+
 	const fillAnswer = async (value: string) => {
 		await page.locator("[name='letter']").fill(value);
+	};
+
+	const fillCorrectAnswer = async () => {
+		await fillAnswer(await getRomanization());
 	};
 
 	const toggleSettings = async () => {
@@ -31,15 +40,22 @@ test.describe('Hangul', () => {
 	});
 
 	test('should count a correct answer', async () => {
-		await getLetterLocator().hover();
-		const romanization = await page.locator('.romanization').innerText();
-		await fillAnswer(romanization);
+		fillCorrectAnswer();
 		const score = await getScore();
 		expect(score).toBe('1 / 1');
 	});
 
-	test('should not count an incorrect answer', async () => {
+	test('should handle incorrect answer', async () => {
 		await fillAnswer('x'); // non-existing romanization
+		const romanization = await getRomanization();
+		const letter = await getLetterLocator().textContent();
+		await expect(page.locator('.correction')).toHaveText(`${letter} = ${romanization}`);
+	});
+
+	test('should handle consecutive errors correctly', async () => {
+		await fillAnswer('x');
+		await fillAnswer('z');
+		await fillCorrectAnswer();
 		const score = await getScore();
 		expect(score).toBe('0 / 1');
 	});
